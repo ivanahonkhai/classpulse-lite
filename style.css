@@ -1,0 +1,68 @@
+/* =====================
+   DESIGN TOKENS
+   These are our colour
+   variables — we define
+   them once and use them
+   everywhere
+======================== */
+:root {
+  --green:      #22c55e;
+  --yellow:     #facc15;
+  --red:        #ef4444;
+  --navy:       #1e3a5f;
+  --card:       #ffffff;
+  --text-dark:  #1e293b;
+  --text-light: #ffffff;
+  --accent:     #38bdf8;
+}
+
+/* =====================
+   BASE STYLES
+======================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--navy);
+  color: var(--text-light);
+  min-height: 100vh;
+}
+
+/* =====================
+   HEADER
+======================== */
+#app-header {
+  text-align: center;
+  padding: 24px 16px 16px;
+}
+
+#app-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+#header-subtitle {
+  font-size: 1rem;
+  opacity: 0.75;
+  margin-top: 4px;
+}
+
+/* =====================
+   SCREEN SYSTEM
+   Only the section with
+   class "active" is shown
+======================== */
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+  padding: 16px;
+  max-width: 700px;
+  margin: 0 auto;
+}

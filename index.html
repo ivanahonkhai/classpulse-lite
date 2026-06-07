@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClassPulse</title>
+
+  <!-- Google Fonts: Nunito is round and friendly — perfect for students -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Our stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ==============================
+       HEADER — shown on every screen
+  ================================ -->
+  <header id="app-header">
+    <h1>📊 ClassPulse</h1>
+    <p id="header-subtitle">Know how your class is doing — right now</p>
+  </header>
+
+  <!-- ==============================
+       MAIN CONTENT AREA
+       Only one section is visible
+       at a time — JS controls this
+  ================================ -->
+  <main>
+
+    <!-- SECTION 1: Dashboard — the main screen with subjects and colour buttons -->
+    <section id="screen-dashboard" class="screen active">
+      <p>Dashboard goes here</p>
+    </section>
+
+    <!-- SECTION 2: Student History — shown when a student name is clicked -->
+    <section id="screen-history" class="screen">
+      <p>Student history goes here</p>
+    </section>
+
+    <!-- SECTION 3: Charts — class performance graphs -->
+    <section id="screen-charts" class="screen">
+      <p>Charts go here</p>
+    </section>
+
+  </main>
+
+  <!-- Chart.js — a free library that draws beautiful graphs -->
+  <!-- We load it here so it's ready whenever we need it -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Our logic file — loaded last so the page is ready before JS runs -->
+  <script src="script.js"></script>
+
+</body>
+</html>
