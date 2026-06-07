@@ -1,56 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ClassPulse</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClassPulse</title>
 
-  <!-- Google Fonts: Nunito is round and friendly — perfect for students -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Google Fonts: Nunito is round and friendly — perfect for students -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Our stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+    <!-- Our stylesheet -->
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- ==============================
+    <!-- ==============================
        HEADER — shown on every screen
   ================================ -->
-  <header id="app-header">
-    <h1>📊 ClassPulse</h1>
-    <p id="header-subtitle">Know how your class is doing — right now</p>
-  </header>
+    <header id="app-header">
+        <h1>📊 ClassPulse</h1>
+        <p id="header-subtitle">Know how your class is doing — right now</p>
+    </header>
 
-  <!-- ==============================
+    <!-- ==============================
        MAIN CONTENT AREA
        Only one section is visible
        at a time — JS controls this
   ================================ -->
-  <main>
+    <main>
 
-    <!-- SECTION 1: Dashboard — the main screen with subjects and colour buttons -->
-    <section id="screen-dashboard" class="screen active">
-      <p>Dashboard goes here</p>
-    </section>
+        <!-- SECTION 1: Dashboard — the main screen with subjects and colour buttons -->
+        <section id="screen-dashboard" class="screen active">
+            <!-- Subject Selector -->
+            <div id="subject-selector">
+                <p class="section-label">Choose a subject:</p>
+                <div id="subject-buttons">
+                    <button class="btn-subject active" data-subject="Math">📐 Math</button>
+                    <button class="btn-subject" data-subject="English">📖 English</button>
+                    <button class="btn-subject" data-subject="IPC">🌍 IPC</button>
+                </div>
+            </div>
 
-    <!-- SECTION 2: Student History — shown when a student name is clicked -->
-    <section id="screen-history" class="screen">
-      <p>Student history goes here</p>
-    </section>
+            <!-- Name Input -->
+            <div id="name-input-area">
+                <label for="student-name-input" class="section-label">
+                    Student Name:
+                </label>
+                <div id="name-input-row">
+                    <input type="text" id="student-name-input" placeholder="Type the student's name here..."
+                        autocomplete="off" />
+                </div>
+            </div>
 
-    <!-- SECTION 3: Charts — class performance graphs -->
-    <section id="screen-charts" class="screen">
-      <p>Charts go here</p>
-    </section>
+            <!-- Colour Buttons -->
+            <div id="colour-buttons">
 
-  </main>
+                <div class="colour-column">
+                    <div class="count-badge" id="count-green">0</div>
+                    <button class="btn-colour btn-green" data-colour="green">
+                        🟢<span>No Help Needed</span>
+                    </button>
+                    <button class="btn-show-names" data-colour="green">Show Names 👇</button>
+                    <ul class="names-list" id="names-green"></ul>
+                </div>
 
-  <!-- Chart.js — a free library that draws beautiful graphs -->
-  <!-- We load it here so it's ready whenever we need it -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <div class="colour-column">
+                    <div class="count-badge" id="count-yellow">0</div>
+                    <button class="btn-colour btn-yellow" data-colour="yellow">
+                        🟡<span>A Little Help</span>
+                    </button>
+                    <button class="btn-show-names" data-colour="yellow">Show Names 👇</button>
+                    <ul class="names-list" id="names-yellow"></ul>
+                </div>
 
-  <!-- Our logic file — loaded last so the page is ready before JS runs -->
-  <script src="script.js"></script>
+                <div class="colour-column">
+                    <div class="count-badge" id="count-red">0</div>
+                    <button class="btn-colour btn-red" data-colour="red">
+                        🔴<span>Lots of Help</span>
+                    </button>
+                    <button class="btn-show-names" data-colour="red">Show Names 👇</button>
+                    <ul class="names-list" id="names-red"></ul>
+                </div>
+
+            </div>
+
+            <!-- Navigation buttons at the bottom -->
+            <div id="bottom-nav">
+                <button id="btn-view-charts">📊 View Charts</button>
+            </div>
+
+        </section>
+
+        <!-- SECTION 2: Student History — shown when a student name is clicked -->
+        <section id="screen-history" class="screen">
+            <p>Student history goes here</p>
+        </section>
+
+        <!-- SECTION 3: Charts — class performance graphs -->
+        <section id="screen-charts" class="screen">
+            <p>Charts go here</p>
+        </section>
+
+    </main>
+
+    <!-- Chart.js — a free library that draws beautiful graphs -->
+    <!-- We load it here so it's ready whenever we need it -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Our logic file — loaded last so the page is ready before JS runs -->
+    <script src="script.js"></script>
 
 </body>
+
 </html>
