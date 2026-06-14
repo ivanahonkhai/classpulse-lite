@@ -313,3 +313,34 @@ body {
     font-size: 1.1rem;
   }
 }
+/* =====================
+   NOTIFICATIONS
+   Success and warning
+   banners that appear
+   briefly then vanish
+======================== */
+.notification {
+  margin: 0 auto 12px;
+  max-width: 700px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.notification-success {
+  background: #bbf7d0;
+  color: #14532d;
+}
+
+.notification-warning {
+  background: #fef9c3;
+  color: #713f12;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
